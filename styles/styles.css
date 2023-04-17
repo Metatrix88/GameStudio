@@ -1,7 +1,172 @@
 @import url('./fonts.css');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css");
 
-body {
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --primary: #28d223;
+    --border-color: #d9d9d9;
+
+    --container-lg: 1136px;
+    --unit: 8px;
+    --gap: calc(var(--unit) * 2);
+
+    --header-height: 100px;
+}
+
+* {
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.container {
+    width: 100%;
+    max-width: calc(var(--container-lg) + var(--unit) * 4);
+    padding: 0 var(--gap);
+}
+
+/*header*/
+.header {
+    background-color: var(--white);
+}
+
+.header__home {
+    display: inline-block;
+}
+
+.header__logo {
+    width: 225px;
+    height: 32px;
+    fill: var(--primary)
+}
+
+.menu__col {
+    display: flex;
+    height: var(--header-height);
+    align-items: center;
+}
+
+.menu__first-level {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.menu__first-level:hover {
+    padding: var(--gap) 0;
+}
+
+.menu__first-level a {
+    color: var(--black);
+}
+
+.menu__first-level a:hover {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+/*Сделал стрелочку только для первой ссылки*/
+.menu__first-level > ul ~ a:after {
+    content: "";
+    display: inline-block;
+    margin-left: 12px;
+    margin-bottom: 2px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid var(--black);
+}
+
+.menu__first-level > a:hover:after {
+    border-top-color: var(--primary);
+}
+
+.menu__first-level ul {
+    display: none;
+    flex-direction: column;
+    width: 176px;
+    padding: var(--gap) calc(var(--gap) * 2) var(--gap) var(--gap);
+    gap: var(--gap);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--unit);
+    font-size: 16px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    z-index: 1;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, .15);
+}
+
+.menu__first-level > ul a {
+    display: block;
+    position: relative;
+}
+
+.menu__first-level ul > li {
+    position: relative;
+}
+
+.menu__first-level ul > li > ul ~ a:after {
+    content: "";
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid var(--black);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu__first-level:hover  > ul {
+    display: flex;
+}
+
+.menu__first-level ul > li  ul {
+    left: 100%;
+    top: 0;
+    transform: translateX(calc(var(--unit) * 6));
+}
+
+.menu__first-level ul > li  ul:before {
+    content: "";
+    display: inline-block;
+    width: calc(var(--unit) * 8);
+    height: calc(100% + 20px);
+    position: absolute;
+    top: -20px;
+    right: 100%;
+}
+
+.menu__first-level ul > li:hover > ul {
+    display: flex;
+}
+
+.menu__first-level ul > li:hover > a:after {
+    /*border-top-color: transparent;*/
+    border-left-color: var(--primary);
+}
+
+
+
