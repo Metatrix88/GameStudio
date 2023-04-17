@@ -1,11 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>GameStudio</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-</head>
-<body>
-
-</body>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row middle-lg">
+          <div class="col-lg-6">
+            <a class="header__home" href="/">
+              <svg class="header__logo">
+                <use href="./images/svg/sprite.svg#logo"></use>
+              </svg>
+            </a>
+          </div>
+          <nav class="col-lg-6 menu">
+            <ul class="row">
+              <li class="col-lg-4 center-lg menu__col">
+                <div class="menu__first-level">
+                  <ul>
+                    <li>
+                      <ul>
+                        <li><a href="#">Google Play</a></li>
+                        <li><a href="#">App Store</a></li>
+                      </ul>
+                      <a href="#">King</a>
+                    </li>
+                    <li>
+                      <ul>
+                        <li><a href="#">Google Play</a></li>
+                        <li><a href="#">App Store</a></li>
+                      </ul>
+                      <a href="#">Pouch</a>
+                    </li>
+                    <li>
+                      <ul>
+                        <li><a href="#">Google Play</a></li>
+                        <li><a href="#">App Store</a></li>
+                      </ul>
+                      <a href="#">Viking</a>
+                    </li>
+                    <li>
+                      <ul>
+                        <li><a href="#">Google Play</a></li>
+                        <li><a href="#">App Store</a></li>
+                      </ul>
+                      <a href="#">Centaur</a>
+                    </li>
+                  </ul>
+                  <a href="#">Games</a>
+                </div>
+              </li>
+              <li class="col-lg-4 center-lg menu__col">
+                <div class="menu__first-level">
+                  <a href="#">Company</a>
+                </div>
+              </li>
+              <li class="col-lg-4 center-lg menu__col">
+                <div class="menu__first-level">
+                  <a href="#">Careers</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="video-block">
+      <video width="100%" height="100vh" controls>
+        <source
+          src="https://res.cloudinary.com/intellectfox/video/upload/v1659362056/fe/production_ID_3866539_dxjgbj.mp4"
+        />
+        Your browser does not support the video tag
+      </video>
+      <h1>
+        <span class="primary"></span> is one of the top 10 mobile gaming
+        companies in the world
+      </h1>
+    </section>
+    <section class="content">
+      <article class="game"></article>
+      <aside class="recommend"></aside>
+    </section>
+    <footer class="footer"></footer>
+  </body>
 </html>
