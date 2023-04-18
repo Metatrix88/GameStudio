@@ -6,6 +6,7 @@
   --black: #000000;
   --primary: #28d223;
   --border-color: #d9d9d9;
+  --background-footer: #f7f7f7;
 
   --container-lg: 1136px;
   --unit: 8px;
@@ -30,7 +31,7 @@ h2 {
   margin-bottom: calc(var(--unit) * 8);
 }
 
-h3 {
+h3, .h3 {
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 1.4;
@@ -266,6 +267,7 @@ ul {
   padding: var(--unit) var(--gap);
   border: 1px solid var(--border-color);
   border-radius: 40px;
+  cursor: pointer;
 }
 
 .apps {
@@ -297,4 +299,22 @@ ul {
 
 .recommend__icon-title {
   margin-bottom: calc(var(--unit) * 6);
+}
+
+/*footer*/
+.footer {
+  background-color: var(--background-footer);
+  padding: 100px 0;
+}
+
+.footer__wrap {
+  margin-bottom: calc(var(--unit) * 9);
+}
+
+.footer__link {
+  color: var(--black);
+}
+
+.footer__copy {
+  font-size: 0.875rem;
 }
