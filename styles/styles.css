@@ -13,6 +13,7 @@
   --gap: calc(var(--unit) * 2);
 
   --header-height: 100px;
+  --a-speed: 250ms;
 }
 
 * {
@@ -115,6 +116,7 @@ ul {
 
 .menu__first-level a {
   color: var(--black);
+  transition: color var(--a-speed) ease-in-out;
 }
 
 .menu__first-level a:hover {
@@ -131,6 +133,7 @@ ul {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 10px solid var(--black);
+  transition: border-top-color var(--a-speed) ease-in-out;
 }
 
 .menu__first-level > a:hover:after {
@@ -154,6 +157,25 @@ ul {
   text-align: left;
   z-index: 1;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.15);
+  animation: menu-level-2 var(--a-speed) ease-in-out;
+}
+
+.menu__first-level:hover > ul {
+  display: flex;
+}
+
+@keyframes menu-level-2 {
+  0% {
+    top: 80%;
+    opacity: 0;
+  }
+  80% {
+    top: 100%;
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .menu__first-level > ul a {
@@ -175,16 +197,32 @@ ul {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.menu__first-level:hover > ul {
-  display: flex;
+  transition: border-left-color var(--a-speed) ease-in-out;
 }
 
 .menu__first-level ul > li ul {
   left: 100%;
   top: 0;
   transform: translateX(calc(var(--unit) * 6));
+  animation: menu-level-next var(--a-speed) ease-in-out;
+}
+
+.menu__first-level ul > li:hover > ul {
+  display: flex;
+}
+
+@keyframes menu-level-next {
+  0% {
+    left: 80%;
+    opacity: 0;
+  }
+  80% {
+    left: 100%;
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .menu__first-level ul > li ul:before {
@@ -195,10 +233,6 @@ ul {
   position: absolute;
   top: -20px;
   right: 100%;
-}
-
-.menu__first-level ul > li:hover > ul {
-  display: flex;
 }
 
 .menu__first-level ul > li:hover > a:after {
